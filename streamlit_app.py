@@ -32,6 +32,24 @@ with col1:
     st.checkbox("Self-care 🌸")
     st.checkbox("Sleep well 😴")
 
+    st.divider()
+
+    # 🧠 HABITS SECTION
+    st.subheader("✅ Habits – Today")
+
+    h1 = st.checkbox("Water 💧", key="habit_water")
+    h2 = st.checkbox("Exercise 🏋️‍♀️", key="habit_exercise")
+    h3 = st.checkbox("Skincare 🧴", key="habit_skincare")
+
+    completed = sum([h1, h2, h3])
+    total = 3
+
+    st.progress(completed / total)
+    st.caption(f"{completed} / {total} habits completed")
+
+    if st.button("📊 Open habits tracker"):
+        st.info("➡️ Go to the Habits section from the sidebar")
+
 # -------- RIGHT COLUMN --------
 with col2:
     st.subheader("⏰ Focus of the day")
